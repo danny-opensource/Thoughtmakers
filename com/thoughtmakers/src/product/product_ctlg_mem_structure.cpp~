@@ -174,7 +174,7 @@ vector<string> GetShopesInLocation(vector<string> vShopsFromLocation, vector<str
 	 	{
 			if( *iteratorLocation == *iteratorShops )
 			{
-				string sLocation = *iteratorShops;
+				string sLocation = iteratorShops;
 				vShopsInLocation.push_back(sLocation);
 				iteratorLocation++;iteratorShops++;
 			}
