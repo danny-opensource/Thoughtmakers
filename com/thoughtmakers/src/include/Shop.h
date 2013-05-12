@@ -5,13 +5,11 @@
 //**************************************************************************/
 
 #include<string>
-#include "Location.h"
 using namespace std;
 struct Shop
 {
 	string m_ShopName;
-	location shop_location;
-	float cost;
+	float m_fCost;
 	int m_nRank;
 };
 

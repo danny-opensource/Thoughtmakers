@@ -3,7 +3,8 @@
 //Author		: krao24@gmail.com
 //Description   : Header file for Product structure
 //**************************************************************************/
-
+#ifndef PRODUCT
+#define PRODUCT
 #include<vector>
 #include<string>
 #include "Shop.h"
@@ -20,4 +21,4 @@ struct Product
 	Product *left;
 	Product *right;
 };
-
+#endif
