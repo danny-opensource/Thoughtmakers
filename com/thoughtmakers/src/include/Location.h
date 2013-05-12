@@ -8,7 +8,7 @@
 struct location
 {
 std::string location_name;
-//product *root;
+vector<Shop> shopList;
 };
 
 #endif

@@ -5,6 +5,7 @@
 //**************************************************************************/
 #include<iostream>
 #include "../include/Product.h"
+
 #include<string>
 #include<vector>
 #include<fstream>
@@ -39,10 +40,10 @@ Product* Product::createProduct(Product *product, string productName)
 		for(shopIterator = csShopName.begin(); shopIterator != csShopName.end(); shopIterator++)
 		{
 			i++;
-			ProductShop productShop;
+			Shop productShop;
 			productShop.m_fCost = 3*i + 10;
-			productShop.m_sShops.m_ShopName = *shopIterator;
-			productShop.m_sShops.m_nRank = 10;
+			productShop.m_ShopName = *shopIterator;
+			productShop.m_nRank = 10;
 			product->m_vProductShops.push_back(productShop);
 		}
 

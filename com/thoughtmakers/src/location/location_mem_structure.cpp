@@ -80,6 +80,7 @@ void insertIntoTree(string loc)
 		root = new location_node;
 		location *currentLocation = new location; // Location Datastructure to store location details. Can grow in future.
 		currentLocation->location_name = loc;
+		currentLocation->shopList = NULL; // [TO-DO] Compute this and pass the vector of shop names
 		root->left = NULL;
 		root->right = NULL;
 		root->loc_data = currentLocation;
@@ -104,6 +105,8 @@ void insert(location_node *current, string loc)
 			current->left = new location_node;
 			location *currentLocation = new location;
 			currentLocation->location_name = loc;
+			currentLocation->shopList = NULL; // [TO-DO] Compute this and pass the vector of shop names
+			root->left = NULL;
 			current->left->left = NULL;
 			current->left->right = NULL;
 			current->left->loc_data = currentLocation;
@@ -120,6 +123,7 @@ void insert(location_node *current, string loc)
 			current->right = new location_node;
 			location  *currentLocation = new location;
 			currentLocation->location_name = loc;
+			currentLocation->shopList = NULL; // [TO-DO] Compute this and pass the vector of shop names
 			current->right->left = NULL;
 			current->right->right = NULL;
 			current->right->loc_data = currentLocation;

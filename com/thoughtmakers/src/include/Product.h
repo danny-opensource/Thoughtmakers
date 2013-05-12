@@ -5,18 +5,18 @@
 //**************************************************************************/
 
 #include<vector>
-#include<vector>
 #include<string>
-#include "ProductShop.h"
+#include "Shop.h"
 using namespace std;
+
+
 struct Product
 {
-
 	Product* createProduct(Product *product, string productName);
 	void GetShopNames();
 	void GetProductNames();
 	string m_ProductName;
-	vector<ProductShop> m_vProductShops;
+	vector<Shop> m_vProductShops;
 	Product *left;
 	Product *right;
 };
