@@ -1,15 +1,23 @@
-#include<iostream>
-#include"ProductShop.h"
-#include<string>
+//***************************************************************************/
+//File Name		: Produt.cpp
+//Author		: krao24@gmail.com
+//Description   : Header file for Product structure
+//**************************************************************************/
+
 #include<vector>
-
+#include<vector>
+#include<string>
+#include "ProductShop.h"
 using namespace std;
-
-typedef struct Product
+struct Product
 {
- 	vector<ProductShop> ProductShops;
-	string m_sProductName;
-	Product *m_pLeft;
-	Product *m_pRight;
+
+	Product* createProduct(Product *product, string productName);
+	void GetShopNames();
+	void GetProductNames();
+	string m_ProductName;
+	vector<ProductShop> m_vProductShops;
+	Product *left;
+	Product *right;
 };
 

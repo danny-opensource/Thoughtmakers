@@ -1,9 +1,14 @@
-#include<iostream>
+//***************************************************************************/
+//File Name		: Shop.h
+//Author		: krao24@gmail.com
+//Description   : Header file for Shops structure
+//**************************************************************************/
+
 #include<string>
 using namespace std;
-
-typedef struct Shop
+struct Shops
 {
-	string m_sShopName;
+	string m_ShopName;
 	int m_nRank;
 };
+

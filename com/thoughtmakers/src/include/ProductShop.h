@@ -1,11 +1,16 @@
+//***************************************************************************/
+//File Name		: ProductShop.h
+//Author		: krao24@gmail.com
+//Description   : Header file for ProdcutShop structure
+//**************************************************************************/
 #include<iostream>
-#include"Shop.h"
-
+#include<vector>
+#include "../include/Shop.h"
 using namespace std;
 
-
-typedef struct ProductShop
+struct ProductShop
 {
-	Shop m_Shops;
-	float cost;
+	Shops m_sShops;
+	float m_fCost;
 };
+
