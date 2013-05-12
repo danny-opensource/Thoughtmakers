@@ -1,6 +1,7 @@
 #include "LocationNode.h"
+#include<string>
 void readLocationFiles();
 void buildBST();
-void insertIntoTree(string);
-void insert(location_node*,string);
+void insertIntoTree(std::string);
+void insert(location_node*,std::string);
 void debugPrintTree(location_node*);
