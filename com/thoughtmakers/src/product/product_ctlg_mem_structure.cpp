@@ -4,8 +4,8 @@
 //Description   : Main file for creating product tree structure
 //**************************************************************************/
 #include<iostream>
-//#include "../include/product_method_protoypes.h"
-#include<product_method_prototypes.h>
+#include"../include/product_method_prototypes.h"
+//#include"product_method_prototypes.h"
 #include<string>
 #include<vector>
 #include<fstream>
@@ -52,12 +52,12 @@ Product* createProduct(Product *product, string productName)
 
 	else if( productName < product->m_ProductName )
 	{
-		product->left = product->createProduct(product->left,productName);
+		product->left = createProduct(product->left,productName);
 	}
 
 	else
 	{
-		product->right = product->createProduct(product->right,productName);
+		product->right = createProduct(product->right,productName);
 	}
 
 	return product;
@@ -223,15 +223,15 @@ vector<string> GetShopesInLocation(vector<string> vShopsFromLocation, vector<str
 int main()
 {
 	/*TODO : Move this file operations to utility method*/
-	Product _temp;
-	_temp.GetProductNames();
-	_temp.GetShopNames();
+	//Product _temp;
+	GetProductNames();
+	GetShopNames();
 
 	Product *proHead = NULL;
 	vector<string>::iterator prodIterator = csProductName.begin();
 	for(prodIterator = csProductName.begin() ; prodIterator != csProductName.end(); prodIterator++)
 	{
-		proHead =proHead->createProduct(proHead,*prodIterator);
+		proHead = createProduct(proHead,*prodIterator);
 	}
 
 	debugDisplay( proHead );
