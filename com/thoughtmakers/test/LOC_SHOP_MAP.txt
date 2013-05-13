@@ -1,0 +1,3 @@
+BTMLayout,Ashirvad,Vishnu,XZone,Balaji
+Jayanagar,BigBazaar,Chowhans,WesternUnion
+Koramangala,ABC,PQR
