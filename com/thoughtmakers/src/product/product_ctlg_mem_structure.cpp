@@ -4,8 +4,8 @@
 //Description   : Main file for creating product tree structure
 //**************************************************************************/
 #include<iostream>
-#include "../include/Product.h"
-
+//#include "../include/product_method_protoypes.h"
+#include<product_method_prototypes.h>
 #include<string>
 #include<vector>
 #include<fstream>
@@ -25,7 +25,7 @@ vector<string> csShopName;
 //
 //returns product node 
 //*************************************************************************************/
-Product* Product::createProduct(Product *product, string productName)
+Product* createProduct(Product *product, string productName)
 {
 	vector<string>::iterator shopIterator = csShopName.begin();
 	Product *temp = product;
@@ -70,7 +70,7 @@ Product* Product::createProduct(Product *product, string productName)
 //Parameters  : None
 //returns None 
 //*******************************************************************************/
-void Product::GetShopNames( )
+void GetShopNames( )
 {
 	string line;
 	fstream shopInfo ( "../../test/SHOPS_INFO.txt" );
@@ -95,7 +95,7 @@ void Product::GetShopNames( )
 //Parameters  : None
 //returns None 
 //********************************************************************************/
-void Product::GetProductNames()
+void GetProductNames()
 {
 	string line;
 	fstream productInfo ( "../../test/PRODUCT_INFO.txt" );
@@ -115,6 +115,14 @@ void Product::GetProductNames()
 	}
 }
 
+//******************************************************************/
+//
+//Method Name : debugDisplay
+//Parameters  : root[in] -> Root node of the tree
+//Returns     : Nothing
+//
+//*****************************************************************/
+
 void debugDisplay(Product* root)
 {
 	if( root != NULL )
@@ -125,6 +133,13 @@ void debugDisplay(Product* root)
 	}
 }
 
+//******************************************************************/
+//
+//Method Name : debugDisplaypreorder
+//Parameters  : root[in] -> Root node of the tree
+//Returns     : Nothing
+//
+//*****************************************************************/
 void debugDisplayPreorder(Product* root)
 {
 	if(root != NULL)
@@ -136,6 +151,16 @@ void debugDisplayPreorder(Product* root)
 		
 }
 
+//******************************************************************/
+//
+//Method Name : GetShopesInLocation
+//Parameters  : 
+//vShopsFromLocation -> List of shops from a particular location
+//vAllShops	     -> List of shops that has the product available
+//Returns     : List of shops in particular location where the 
+//		product is available
+//
+//*****************************************************************/
 vector<string> GetShopesInLocation(vector<string> vShopsFromLocation, vector<string> vAllShops)
 {
 	vector<string> vShopsInLocation;

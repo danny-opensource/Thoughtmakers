@@ -13,9 +13,6 @@ using namespace std;
 
 struct Product
 {
-	Product* createProduct(Product *product, string productName);
-	void GetShopNames();
-	void GetProductNames();
 	string m_ProductName;
 	vector<Shop> m_vProductShops;
 	Product *left;
