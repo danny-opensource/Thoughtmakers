@@ -16,6 +16,8 @@
 #include "../include/Location.h"
 #include "../include/location_mtd_proto.h"
 #include "../include/LocationNode.h"
+#include "../include/location_utils.h"
+#include "../include/sys_load.h"
 using namespace std;
 vector<string> locations;
 location_node *root;
@@ -77,14 +79,24 @@ void insertIntoTree(string loc)
 {
 	if(root == NULL)
 	{	
-		vector<Shop> shopList;
+		vector<string> shopList;
 		root = new location_node;
 		location *currentLocation = new location; // Location Datastructure to store location details. Can grow in future.
 		currentLocation->location_name = loc;
+		cout<<"Before calling getShopsFOrLocation"<<endl;
+		shopList =getShopsForLocation(loc);
+		cout<<"-------- SHOP LIST -------------"<<endl;
+		for(int i=0;i<shopList.size();i++)
+		{
+			cout<<"Shop: "<<shopList[i]<<"\t";
+		}
+		cout<<"********** SHOP LIST *********"<<endl;
 		currentLocation->shopList = shopList; // [TO-DO] Compute this and pass the vector of shop names
 		root->left = NULL;
 		root->right = NULL;
 		root->loc_data = currentLocation;
+		
+
 		return;
 	}
 	insert(root,loc);
@@ -103,7 +115,8 @@ void insert(location_node *current, string loc)
 		}
 		else
 		{
-			vector<Shop> shopList;
+		
+			vector<string> shopList;
 			current->left = new location_node;
 			location *currentLocation = new location;
 			currentLocation->location_name = loc;
@@ -121,7 +134,7 @@ void insert(location_node *current, string loc)
 		}
 		else
 		{
-			vector<Shop> shopList;
+			vector<string> shopList;
 			current->right = new location_node;
 			location  *currentLocation = new location;
 			currentLocation->location_name = loc;
