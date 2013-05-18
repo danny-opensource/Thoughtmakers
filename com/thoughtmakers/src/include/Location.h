@@ -10,7 +10,7 @@
 struct location
 {
 std::string location_name;
-std::vector<Shop> shopList;
+std::vector<string> shopList;
 };
 
 #endif

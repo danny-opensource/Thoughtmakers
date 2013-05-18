@@ -4,11 +4,12 @@
 #include<vector>
 #include<stdio.h>
 #include<string.h>
+#include"../include/sys_load.h"
 using namespace std;
 
-static map< string,vector<string> > location_shop_map;
 void loadLocationShopMap()
 {
+	cout<<"Loading the Map with Data. Please wait..."<<endl;
 	ifstream mapfile;
 	mapfile.open("../../test/LOC_SHOP_MAP.txt");
 	if(mapfile.is_open())
@@ -36,7 +37,7 @@ void loadLocationShopMap()
 					shops.push_back(p);
 				p = strtok(NULL,",");
 			}
-			location_shop_map.insert(std::pair< string,vector<string> >(key,shops));
+			 location_shop_map.insert(std::pair< string,vector<string> >(key,shops));
 			shops.clear();
 		}
 
@@ -56,19 +57,31 @@ void loadLocationShopMap()
 		 */
 	}
 	mapfile.close();
+	cout<<"Loading Complete."<<endl;
 }
 
 vector<string> getShopsForLocation(string loc)
 {
-	return location_shop_map.find(loc)->second;
+	cout<<"getShopsForLocation called with value: "<<location_shop_map.size()<<endl;
+	//cout<<"string value is : "<<location_shop_map[loc]<<endl;
+	vector<string> val = location_shop_map.find(loc)->second;
+	cout<<"PRINT START"<<endl;
+	for(int i=0;i<val.size();i++)
+	{
+		cout<<val[i]<<"\t";
+	}
+	cout<<"PRINT END"<<endl;
+	return val;
 }
 
+/*
 int main()
 {
-	loadLocationShopMap();
+	//loadLocationShopMap();
 	vector<string> vals = getShopsForLocation("BTMLayout");
 	for(int i=0;i<vals.size();i++)
 	{
 		cout<<vals[i];
 	}
 }
+*/
