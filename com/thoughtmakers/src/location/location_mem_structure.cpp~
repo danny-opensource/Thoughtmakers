@@ -115,6 +115,7 @@ void insert(location_node *current, string loc)
 		}
 		else
 		{
+		
 			vector<string> shopList;
 			current->left = new location_node;
 			location *currentLocation = new location;

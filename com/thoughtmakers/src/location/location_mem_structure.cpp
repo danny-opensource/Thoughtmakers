@@ -21,7 +21,6 @@
 using namespace std;
 vector<string> locations;
 location_node *root;
-
 /*
  *Main invocation for the tree build. 
  * Must be removed after product evolution. Entry point is from main class triggered from Linux boot
@@ -67,47 +66,36 @@ void buildBST()
 	int index=0;
 	for(int i=0;i<locations.size();i++)
 	{
-		insertIntoTree(locations[i]); // Used for root node insertion. insert(node*, string) for subsequent insertions
+		insert(root,locations[i]);
 	} 
 }
 
-/*
- * Root tree node insertion and entry point for data insertion into tree.
- * If not root, passes over to insert(node*,string) 
- */
-void insertIntoTree(string loc)
+location_node* createNode(string loc)
 {
-	if(root == NULL)
-	{	
-		vector<string> shopList;
-		root = new location_node;
-		location *currentLocation = new location; // Location Datastructure to store location details. Can grow in future.
-		currentLocation->location_name = loc;
-		cout<<"Before calling getShopsFOrLocation"<<endl;
-		shopList =getShopsForLocation(loc);
-		cout<<"-------- SHOP LIST -------------"<<endl;
-		for(int i=0;i<shopList.size();i++)
-		{
-			cout<<"Shop: "<<shopList[i]<<"\t";
-		}
-		cout<<"********** SHOP LIST *********"<<endl;
-		currentLocation->shopList = shopList; // [TO-DO] Compute this and pass the vector of shop names
-		root->left = NULL;
-		root->right = NULL;
-		root->loc_data = currentLocation;
-		
+	location_node *current = new location_node;
+	vector<string> shopList;
+	location *currentLocation = new location;
+	currentLocation->location_name = loc;
+	currentLocation->shopList = shopList; // [TO-DO] Compute this and pass the vector of shop names
+	current->left = NULL;
+	current->right = NULL;
+	current->loc_data = currentLocation;
+	return current;
 
-		return;
-	}
-	insert(root,loc);
 }
 
 /*
- * Non-root tree nodes insertion
+ * tree nodes insertion
  */
 void insert(location_node *current, string loc)
 {
-	if(loc < (current->loc_data->location_name))
+	if(current == NULL)
+	{
+		/* Case triggered only when root is null */
+		current = createNode(loc);
+		root = current;
+	}
+	else if(loc < (current->loc_data->location_name))
 	{
 		if(current->left != NULL)
 		{
@@ -115,15 +103,7 @@ void insert(location_node *current, string loc)
 		}
 		else
 		{
-		
-			vector<string> shopList;
-			current->left = new location_node;
-			location *currentLocation = new location;
-			currentLocation->location_name = loc;
-			currentLocation->shopList = shopList; // [TO-DO] Compute this and pass the vector of shop names
-			current->left->left = NULL;
-			current->left->right = NULL;
-			current->left->loc_data = currentLocation;
+			current->left = createNode(loc);
 		}
 	}
 	else
@@ -134,14 +114,7 @@ void insert(location_node *current, string loc)
 		}
 		else
 		{
-			vector<string> shopList;
-			current->right = new location_node;
-			location  *currentLocation = new location;
-			currentLocation->location_name = loc;
-			currentLocation->shopList = shopList; // [TO-DO] Compute this and pass the vector of shop names
-			current->right->left = NULL;
-			current->right->right = NULL;
-			current->right->loc_data = currentLocation;
+			current->right = createNode(loc);
 		}
 	}
 }
