@@ -12,7 +12,7 @@ const int MAXHOSTNAME = 200;
 const int MAXCONNECTIONS = 5;
 const int MAXRECV = 500;
 
-struct  Socket
+class  Socket
 {
  public:
   Socket();
