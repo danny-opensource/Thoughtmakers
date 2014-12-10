@@ -41,7 +41,7 @@ Product* createProduct(Product *product, string productName)
 		{
 			i++;
 			Shop productShop;
-			productShop.m_fCost = 3*i + 10;
+			productShop.m_fCost = 3*i + 10; //temp cost for now
 			productShop.m_ShopName = *shopIterator;
 			productShop.m_nRank = 10;
 			product->m_vProductShops.push_back(productShop);
