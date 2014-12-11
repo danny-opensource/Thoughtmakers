@@ -13,8 +13,9 @@ food items. Basically an app installed on the smart phone with access to the int
 
 
 Technology involved
--Collecting data reviews,etc : Bot?
+-Collecting data reviews,etc : Bot?, Various sites that uses such systems( zomato,etc)
 -Storing large amount review data --> Big Data, NoSQL storage( mongoDB,etc).
 -Data munging : Python libraries, R, matlab, Octave, Machine learning
 -Updating the data : machine learning
 -App: Andriod 
+-Sentimental analysis for reviews.
