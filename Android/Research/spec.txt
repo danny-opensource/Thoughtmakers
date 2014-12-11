@@ -1,0 +1,20 @@
+Basic Idea :
+
+A system which notifies the user about the delicacies available within 'x' meters of his/her location. The idea is to localize the need for searching the 
+food items. Basically an app installed on the smart phone with access to the internet.
+-The notification will be based on the user feedback/reviews for that food item.
+-Data munging needs to be done in order to rate a particular food item at a particular restaurant by collection all the reviews for that place from various sources
+-Provide functionality to :
+-- Search for particular food / restaurant
+-- Rank a food/restaurnt higher on the search result( paid )
+-- Direction via map to that place.
+
+
+
+
+Technology involved
+-Collecting data reviews,etc : Bot?
+-Storing large amount review data --> Big Data, NoSQL storage( mongoDB,etc).
+-Data munging : Python libraries, R, matlab, Octave, Machine learning
+-Updating the data : machine learning
+-App: Andriod 
