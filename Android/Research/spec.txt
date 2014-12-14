@@ -1,5 +1,4 @@
 Basic Idea :
-
 A system which notifies the user about the delicacies available within 'x' meters of his/her location. The idea is to localize the need for searching the 
 food items. Basically an app installed on the smart phone with access to the internet.
 -The notification will be based on the user feedback/reviews for that food item.
@@ -11,11 +10,39 @@ food items. Basically an app installed on the smart phone with access to the int
 
 
 
+To summarize,
+
+Story Line:
+Ted lives on Lexington Street. West Taylor is 0.1 miles from his place. He had a long day. He wishes to have food quickly. 
+So, he uses the thoughtmakers app, he pushes the "Favorite Near Me". 
+
+What out app does:
+
+Case 0:
+So, our engine learns the best food available around 
+1 Mile (hyptothetically)  of Ted and churns restaurent reviews and feedbacks available from users all around the globe and provides him the best dish he could enjoy for the night!
+
+Case 1:
+If no joints are available, then the app suggests the user "No joints available that serves favorite food nearby. However there is a joint at about 2 miles from this place. Would you like to try this option?
+
+Case 2:
+If joints are availalbe within 1 Mile, but are not serving favorites (No user reviews), ask the user if he prefers this option or would prefer going a bit farther but get a favorite dish!
+
 
 Technology involved
 -Collecting data reviews,etc : Bot?, Various sites that uses such systems( zomato,etc)
+Feasibility Study:
+1. Check and explore all the places on this god damn internet where they provide you with APIs to get the following:
+  a. Which restaurants are present at which location
+  b. APIs to access user reviews, feedbacks and rating stars for each restaurant.
+  c. The food they serve at each of these restaurants (Menu card)
+  d. Explore Programming languages and APIs that support sentiment analysis for the food
+  
 -Storing large amount review data --> Big Data, NoSQL storage( mongoDB,etc).
--Data munging : Python libraries, R, matlab, Octave, Machine learning
--Updating the data : machine learning
--App: Andriod 
--Sentimental analysis for reviews.
+1. What storage architecture to be adopted.
+2. Understand the storage system. (Most likely it is a non-SQL)
+3. Communication/protocols between the system and the storage
+
+[High Priority Learning Needed]: Data munging : Python libraries, R, matlab, Octave, Machine learning
+1. Updating the data : machine learning
+2. App: Andriod 
