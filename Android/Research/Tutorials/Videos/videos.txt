@@ -1,1 +1,5 @@
-Videos come here
+1. https://www.youtube.com/playlist?list=PLD63A284B7615313A
+ a. This covers the entire machine learning course. The videos are part of the course at caltech.
+
+2. https://class.coursera.org/ml-007
+--This is from coursera. The course is split into smaller videos. The tutorial is brief. 
