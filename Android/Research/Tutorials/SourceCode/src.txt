@@ -1,1 +1,2 @@
-All Sample Projects/Sourcecode come here
+https://www.hackerrank.com/domains/ai/machine-learning
+--Not source code as such but this is a kind of machine learning and statitics problems. One can read about the problems and try to solve them. You can also see the solutions of the problems under leader board section.
